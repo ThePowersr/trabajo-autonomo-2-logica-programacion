@@ -87,7 +87,7 @@ Los diagramas elaborados en la fase de diseño guían la implementación:
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/<tu-usuario>/generador-contrasenas.git
+git clone https://github.com/ThePowersr/trabajo-autonomo-2-logica-programacion.git
 cd generador-contrasenas
 
 # Ejecutar el programa
