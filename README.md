@@ -1,115 +1,73 @@
 # 🔐 Generador Seguro de Contraseñas
 
-Trabajo Autónomo — **Lógica de Programación** · UIDE
-Autor: **Angel Rafael Parraga Zambrano**
-Docente: Vizcaíno Imacaña Fernanda Paulina
+**Proyecto Integrador — Lógica de Programación**
+Universidad Internacional del Ecuador (UIDE)
 
 ---
 
-## 📌 Descripción del proyecto
+## 📌 Nombre del proyecto
+El impacto de las nuevas tecnologías en la sociedad: **Generador Seguro de Contraseñas**.
 
-Aplicación de consola que genera contraseñas seguras de forma automatizada.
-El usuario configura la **longitud** y los **tipos de caracteres** deseados, y el
-programa produce una contraseña usando un generador **criptográficamente seguro
-(CSPRNG)**, evaluando además su fortaleza por entropía.
+## 👤 Estudiante
+Angel Rafael Parraga Zambrano
 
-Este repositorio corresponde a la **fase de desarrollo** del proyecto, partiendo del
-diseño funcional y de arquitectura realizado en el Trabajo Autónomo N.º 1.
+## 🎯 Objetivo del sistema
+Asistir al usuario en la creación de contraseñas robustas y seguras de forma rápida y
+automatizada, empleando un generador criptográficamente seguro (CSPRNG), sin requerir
+conocimientos técnicos.
 
----
+## ⚙️ Descripción de funcionalidades
 
-## 🚦 Estado del avance — **≈ 50 % completado**
+| ID | Funcionalidad |
+|------|---------------------------------------------|
+| RF-01 | Configurar la longitud de la contraseña (8 a 128) |
+| RF-02 | Seleccionar tipos de caracteres (mayúsculas, minúsculas, dígitos, símbolos) |
+| RF-03 | Generar la contraseña con aleatoriedad segura (módulo `secrets`) |
+| RF-04 | Evaluar la fortaleza mediante el cálculo de entropía |
+| RF-05 | Copiar la contraseña al portapapeles |
+| RF-06 | Ver el historial de contraseñas de la sesión |
+| RF-07 | Limpiar el historial |
 
-| ID | Funcionalidad | Estado |
-|------|----------------------------------|:------:|
-| RF-01 | Configurar longitud (validación 8–128) | ✅ Implementado |
-| RF-02 | Seleccionar tipos de caracteres | ✅ Implementado |
-| RF-03 | Generar contraseña (CSPRNG) | ✅ Implementado |
-| RF-04 | Evaluar fortaleza (entropía) | ✅ Implementado (versión inicial) |
-| RF-05 | Copiar al portapapeles | ⬜ Pendiente |
-| RF-06 | Ver historial de la sesión | ⬜ Pendiente |
-| RF-07 | Limpiar historial | ⬜ Pendiente |
-| — | Menú principal interactivo | ⬜ Pendiente |
+## 📅 Fecha
+Junio de 2026
 
 ---
 
 ## 🗂️ Estructura del repositorio
 
 ```
-generador-contrasenas/
-├── README.md                 ← este archivo
+proyecto-integrador/
+├── README.md
 ├── src/
-│   └── generador.py          ← código fuente (avance del 50%)
+│   └── generador.py            ← código completo del programa
 ├── diagramas/
-│   ├── diagramas_mermaid.md  ← código fuente de los 3 diagramas (Mermaid)
 │   ├── diagrama_casos_uso.png
 │   ├── diagrama_flujo.png
 │   └── diagrama_arquitectura.png
-└── docs/
-    └── logica_de_programacion_autonomo_1.pdf  ← documento de diseño (TA N.º 1)
+├── docs/
+│   └── contenido_proyecto.tex  ← documento del proyecto (LaTeX)
+└── presentacion/
+    └── presentacion_generador.pptx
 ```
 
----
-
-## 🧩 Diagramas
-
-Los diagramas elaborados en la fase de diseño guían la implementación:
-
-- **Casos de uso** — funcionalidades observables por el usuario.
-- **Diagrama de flujo** — secuencia lógica de la generación.
-- **Diagrama de arquitectura** — estructura en 3 capas (Presentación · Lógica · Datos).
-
-> El código fuente de los diagramas está en `diagramas/diagramas_mermaid.md`
-> y las imágenes exportadas en la misma carpeta.
-
-### Relación código ↔ diagrama de flujo
-
-| Paso del diagrama de flujo | Función en `generador.py` |
-|----------------------------|---------------------------|
-| Definir parámetros | `solicitar_longitud()`, `solicitar_tipos_caracteres()` |
-| Validar parámetros | condicionales dentro de las funciones anteriores |
-| Construir conjunto de caracteres | `construir_conjunto()` |
-| Seleccionar caracteres (CSPRNG) | `generar_contrasena()` |
-| Evaluar fortaleza | `evaluar_fortaleza()` |
-| Mostrar contraseña | `main()` |
-
----
-
-## 🛠️ Entorno de desarrollo
-
+## 🛠️ Tecnologías
 - **Lenguaje:** Python 3.10+
-- **IDE recomendado:** Visual Studio Code
-- **Dependencias:** solo librería estándar (`secrets`, `string`, `math`) — sin instalaciones externas.
+- **Librerías:** `secrets`, `string`, `math` (estándar) · `pyperclip` (opcional, para copiar)
+- **Control de versiones:** Git + GitHub
 
----
-
-## ▶️ Cómo ejecutar
-
+## ▶️ Ejecución
 ```bash
-# Clonar el repositorio
-git clone https://github.com/<tu-usuario>/generador-contrasenas.git
-cd generador-contrasenas
-
-# Ejecutar el programa
+git clone https://github.com/<tu-usuario>/proyecto-integrador.git
+cd proyecto-integrador
 python3 src/generador.py
 ```
 
----
-
-## 🧠 Conceptos de programación aplicados
-
-- **Estructuras condicionales (`if / elif / else`)**: validación de longitud, tipos de
-  caracteres y clasificación de fortaleza.
-- **Estructuras repetitivas (`while`, `for`)**: re-pedir entradas inválidas y construir
-  la contraseña carácter a carácter.
-- **Funciones**: el código está modularizado siguiendo las capas de la arquitectura.
-- **Comentarios**: cada bloque importante está documentado.
+> Para habilitar la copia al portapapeles: `pip install pyperclip`
 
 ---
 
-## 📅 Próximos pasos
-
-1. Añadir menú principal interactivo.
-2. Implementar copiado al portapapeles (RF-05).
-3. Implementar historial de sesión y su limpieza (RF-06, RF-07).
-4. Mejorar el evaluador de fortaleza con verificación de variedad de caracteres.
+## 🧠 Conceptos aplicados
+- **Condicionales** (`if/elif/else`): validación, clasificación de fortaleza y menú.
+- **Bucles** (`while`, `for`): re-solicitud de datos, generación y recorrido del historial.
+- **Funciones**: código modular organizado según la arquitectura de tres capas.
+- **Seguridad**: uso de CSPRNG en lugar de generadores pseudoaleatorios comunes.
