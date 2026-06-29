@@ -57,8 +57,11 @@ proyecto-integrador/
 
 ## ▶️ Ejecución
 ```bash
-git clone https://github.com/<tu-usuario>/proyecto-integrador.git
-cd proyecto-integrador
+# Clonar el repositorio
+git clone https://github.com/ThePowersr/trabajo-autonomo-2-logica-programacion.git
+cd generador-contrasenas
+
+# Ejecutar el programa
 python3 src/generador.py
 ```
 
